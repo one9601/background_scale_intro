@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+
+  <div class="main_intro">
+    <div class="circle pc-circle circle-btn">
+      SKIP
+    </div>
+    <div class="main_intro_txt_inner">
+      <div class="intro_bg">
+        <div>
+          <span></span>
+        </div>
+      </div>
+      <div class="intro_art">
+        <div class="intro_txtBox">
+          <h3>
+            키프레임을 이용한 인트로 효과입니다.
+          </h3>
+          <h5>
+            CKW's Portfolio
+          </h5>
+          <p>스킵을 하려면 [SKIP]을 눌러주세요!</p>
+        </div>
+        <div class="intro_bar"></div>
+        <div class="intro_logo">
+          <img src="img/white-logo.png" alt="">
+        </div>
+        <div class="intro-mobile-circle circle-btn">
+          SKIP
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    if(screen.width > 1200) {
+      $(document).mousemove(function(event){ 
+  
+      var x = event.pageX, y = event.pageY; 
+  
+        setTimeout(function() {
+          $(".circle").css("left",x+"px"); 
+          $(".circle").css("top",y+"px"); 
+        }, 100);
+  
+      }); 
+    };
+  
+    // skip 마우스무빙
+  
+    setTimeout(function(){
+      $(".intro-mobile-circle").addClass("on");
+    }, 4000);
+  
+    // 모바일 skip 애니메이션
+  
+    $(".circle-btn").click(function(){
+      $(".main_intro").hide();
+      $('body').addClass("main_start");
+      // 메인노출
+      $(".my-modal").addClass("on");
+      $(".my-modal-bg").show(0);
+      // 모달노출
+    });
+  
+    // 메인페이지로 이동
+  </script>
+  
+
+  <!-- intro -->
+</body>
+</html>
